@@ -26,11 +26,13 @@ deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted unive
 
    apt-get update && \
 
+   # Python is for node-gyp
+   apt-get install -y vim screen curl git mongodb-org build-essential python && \
+
    # From https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
    curl -sL https://deb.nodesource.com/setup | sudo bash - && \
 
-   # Python is for node-gyp
-   apt-get install -y vim screen curl git mongodb-org build-essential nodejs python && \
+   apt-get install -y nodejs && \
 
    npm install -g pm2 meteorite && \
 
